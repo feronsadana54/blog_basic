@@ -1,9 +1,10 @@
 <%= render "layouts/navbar" %>
 
 <div class="container">
-<%= simple_form_for :post, url: post_index_path do |f| %>
+<%= simple_form_for (@post), url: post_index_path do |f| %>
     <%= f.input :title %>
-    <%= f.text_area :body, lenght: "270px"%>
+    <%= f.label :create_your_post %>
+    <%= f.text_area :body, class: "form-control mt-2"%>
     <br>
     <%= f.button :submit, class:"btn-primary" %>
 <% end %>

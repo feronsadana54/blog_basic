@@ -5,6 +5,7 @@ class PostController < ApplicationController
     end
 
     def new
+        @post = Post.new
     end
 
     def create 
@@ -14,6 +15,12 @@ class PostController < ApplicationController
         else 
             render :plain => @post.errors.inspect
         end
+    end
+
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+        redirect_to root_path, :notice => "Post deleted"
     end
 
     private def post_params 
