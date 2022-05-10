@@ -30,6 +30,10 @@ gem "jbuilder"
 # simple form 
 gem 'simple_form', '~> 5.1'
 
+# image processing
+gem "image_processing", ">= 1.2"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -19,6 +19,10 @@ class PostController < ApplicationController
 
     def show 
         @post = Post.find(params[:id])
+        
+        if @post.image == nil
+            @post.image = "https://www.w3schools.com/w3css/img_avatar3.png"
+        end
     end
 
     def edit
@@ -41,6 +45,6 @@ class PostController < ApplicationController
     end
 
     private def post_params 
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body, :image)
     end
 end
