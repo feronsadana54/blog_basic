@@ -1,5 +1,6 @@
 <%= render "layouts/navbar" %>
 
+<div class="container mt-5">
 <table class="table">
   <thead>
     <tr>
@@ -14,13 +15,14 @@
     <tr>
       <th scope="row"><%= index %></th>
       <td><%= post.title %></td>
-      <td>@</td>
-      <td>@</td>
+      <td><%= link_to "Show", post_path(post), class:"badge bg-info text-dark" %></td>
+      <td><%= link_to "Edit", edit_post_path(post), class:"badge bg-warning text-dark" %></td>
       <td><%= link_to "Delete", post_path(post), data: {
             turbo_method: :delete,
             turbo_confirm: 'Are you sure?'
-            } %></td>
+            }, class:"badge bg-danger" %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+</div>
